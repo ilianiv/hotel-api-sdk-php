@@ -1,5 +1,5 @@
 {
-    "name": "hotelbeds/hotel-api-sdk-php",
+    "name": "iivanov/hotel-api-sdk-php",
     "description": "Hotelbeds Hotel-API SDK for PHP",
     "type": "library",
     "require": {
