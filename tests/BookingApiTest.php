@@ -31,7 +31,7 @@ class BookingApiTest extends PHPUnit\Framework\TestCase
 {
     private $apiClient;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $reader = new Zend\Config\Reader\Ini();
         $commonConfig   = $reader->fromFile(__DIR__ . '/config/Common.ini');
@@ -91,10 +91,5 @@ class BookingApiTest extends PHPUnit\Framework\TestCase
                echo "\n".$e->getMessage()."\n";
                $this->fail($e->getMessage());
            }
-    }
-
-    protected function tearDown()
-    {
-
     }
 }

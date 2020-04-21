@@ -4,17 +4,16 @@
     "type": "library",
     "require": {
         "php": ">=5.5",
-        "zendframework/zend-http": "^2.5",
-        "zendframework/zend-json": "^2.5",
+        "laminas/laminas-http": "^2.5",
+        "laminas/laminas-json": "^2.5",
         "nicmart/string-template": "v0.1.0",
-        "zendframework/zend-config": "2.5.1"
+        "laminas/laminas-config": "2.5.1"
     },
     "require-dev": {
         "php": ">=5.5",
-        "zendframework/zend-http": "^2.5",
-        "zendframework/zend-json": "^2.5",
-        "phpunit/php-code-coverage": "3.0.1",
-        "phpunit/phpunit": "3.7.*",
+        "laminas/laminas-http": "^2.5",
+        "laminas/laminas-json": "^2.5",
+        "phpunit/phpunit": "9.*",
         "phpdocumentor/phpdocumentor": "2.*"
     },
     "license": "LGPL-2.1",

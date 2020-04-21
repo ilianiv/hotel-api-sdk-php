@@ -44,10 +44,10 @@ use hotelbeds\hotel_api_sdk\types\ApiVersions;
 use hotelbeds\hotel_api_sdk\types\HotelSDKException;
 use hotelbeds\hotel_api_sdk\messages\ApiRequest;
 
-use Zend\Http\Client;
-use Zend\Http\Request;
-use Zend\Http\Response;
-use Zend\Uri\UriFactory;
+use Laminas\Http\Client;
+use Laminas\Http\Request;
+use Laminas\Http\Response;
+use Laminas\Uri\UriFactory;
 
 /**
  * Class HotelApiClient. This is the main class of the SDK that makes client-api hotel. Mainly this class is used to make all calls to the hotel-api webservice using ApiHelper classes

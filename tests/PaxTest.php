@@ -5,10 +5,11 @@ use hotelbeds\hotel_api_sdk\model\Pax;
 class PaxTest extends PHPUnit\Framework\TestCase
 {
     private $pax;
-    protected function setUp()
+
+    protected function setUp(): void
     {
-        $this->pax = new Pax(Pax::AD, 30);
-        $this->pax->name = "Pax name";
+        $this->pax          = new Pax(Pax::AD, 30);
+        $this->pax->name    = "Pax name";
         $this->pax->surname = "Pax surname";
     }
 
@@ -23,6 +24,6 @@ class PaxTest extends PHPUnit\Framework\TestCase
      */
     public function testJson()
     {
-        fwrite(STDERR, json_encode($this->pax->toArray())."\n");
+        fwrite(STDERR, json_encode($this->pax->toArray()) . "\n");
     }
 }

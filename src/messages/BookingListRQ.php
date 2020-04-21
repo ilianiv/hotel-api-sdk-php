@@ -10,7 +10,7 @@ namespace hotelbeds\hotel_api_sdk\messages;
 
 use hotelbeds\hotel_api_sdk\helpers\BookingList;
 use hotelbeds\hotel_api_sdk\types\ApiUri;
-use Zend\Http\Request;
+use Laminas\Http\Request;
 
 /**
  * Class BookingListRQ This class defines how sends BookingList Request: HTTP Method, Endpoint ...

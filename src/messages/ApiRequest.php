@@ -10,9 +10,9 @@ namespace hotelbeds\hotel_api_sdk\messages;
 
 use hotelbeds\hotel_api_sdk\helpers\ApiHelper;
 use hotelbeds\hotel_api_sdk\types\ApiUri;
-use Zend\Http\Request;
-use Zend\Uri\Http;
-use Zend\Stdlib\Parameters;
+use Laminas\Http\Request;
+use Laminas\Stdlib\Parameters;
+use Laminas\Uri\Http;
 
 /**
  * Class ApiRequest This is abstract request class define how prepare final HTTP Request

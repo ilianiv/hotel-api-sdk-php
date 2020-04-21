@@ -10,7 +10,7 @@
 class StayTest extends PHPUnit\Framework\TestCase
 {
     private $stay;
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->stay = new \hotelbeds\hotel_api_sdk\model\Stay();
 

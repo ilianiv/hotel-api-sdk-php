@@ -6,7 +6,7 @@ use \hotelbeds\hotel_api_sdk\model\Pax;
 class OccupancyTest extends PHPUnit\Framework\TestCase
 {
     private $occupancy;
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->occupancy = new Occupancy();
         $this->occupancy->adults = 1;
