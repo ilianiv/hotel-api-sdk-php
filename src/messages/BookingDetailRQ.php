@@ -9,7 +9,6 @@
 namespace hotelbeds\hotel_api_sdk\messages;
 
 use hotelbeds\hotel_api_sdk\types\ApiUri;
-use Laminas\Http\Request;
 
 /**
  * Class BookingDetailRQ
@@ -26,6 +25,10 @@ class BookingDetailRQ extends ApiRequest
     public function __construct(ApiUri $baseUri, $bookingReference)
     {
         parent::__construct($baseUri, self::BOOKING . '/' . $bookingReference);
-        $this->request->setMethod(Request::METHOD_GET);
+    }
+
+    protected function getMethod(): string
+    {
+        return 'GET';
     }
 }

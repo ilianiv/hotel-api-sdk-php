@@ -10,7 +10,6 @@ namespace hotelbeds\hotel_api_sdk\messages;
 
 use hotelbeds\hotel_api_sdk\helpers\BookingList;
 use hotelbeds\hotel_api_sdk\types\ApiUri;
-use Laminas\Http\Request;
 
 /**
  * Class BookingListRQ This class defines how sends BookingList Request: HTTP Method, Endpoint ...
@@ -26,7 +25,12 @@ class BookingListRQ extends ApiRequest
     public function __construct(ApiUri $baseUri, BookingList $bookDataRQ)
     {
         parent::__construct($baseUri, self::BOOKING);
-        $this->request->setMethod(Request::METHOD_GET);
+
         $this->setDataRequest($bookDataRQ);
+    }
+
+    protected function getMethod(): string
+    {
+        return 'GET';
     }
 }

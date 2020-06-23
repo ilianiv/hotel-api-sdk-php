@@ -10,7 +10,6 @@ namespace hotelbeds\hotel_api_sdk\messages;
 
 use hotelbeds\hotel_api_sdk\types\ApiUri;
 use hotelbeds\hotel_api_sdk\helpers\Availability;
-use Laminas\Http\Request;
 
 /**
  * Class AvailabilityRQ
@@ -26,7 +25,12 @@ class AvailabilityRQ extends ApiRequest
     public function __construct(ApiUri $baseUri, Availability $availDataRQ)
     {
         parent::__construct($baseUri, self::AVAILABILITY);
-        $this->request->setMethod(Request::METHOD_POST);
+
         $this->setDataRequest($availDataRQ);
+    }
+
+    protected function getMethod(): string
+    {
+        return 'POST';
     }
 }

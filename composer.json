@@ -1,33 +1,30 @@
 {
-    "name": "iivanov/hotel-api-sdk-php",
-    "description": "Hotelbeds Hotel-API SDK for PHP",
-    "type": "library",
-    "require": {
-        "php": ">=5.5",
-        "laminas/laminas-http": "^2.5",
-        "laminas/laminas-json": "^2.5",
-        "nicmart/string-template": "v0.1.0",
-        "laminas/laminas-config": "2.5.1"
-    },
-    "require-dev": {
-        "php": ">=5.5",
-        "laminas/laminas-http": "^2.5",
-        "laminas/laminas-json": "^2.5",
-        "phpunit/phpunit": "9.*",
-        "phpdocumentor/phpdocumentor": "2.*"
-    },
-    "license": "LGPL-2.1",
-    "authors": [
-        {
-            "name": "Tomeu Capo",
-            "email": "t.capo@hotelbeds.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "autoload": {
-        "psr-4": { "hotelbeds\\hotel_api_sdk\\": "src/" }
-    },
-    "autoload-dev": {
-        "psr-4": { "hotelbeds\\hotel_api_sdk\\Tests\\": "tests/" }
+  "name": "iivanov/hotel-api-sdk-php",
+  "description": "Hotelbeds Hotel-API SDK for PHP",
+  "type": "library",
+  "require": {
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "require-dev": {
+    "php": ">=7.3"
+  },
+  "license": "LGPL-2.1",
+  "authors": [
+    {
+      "name": "Tomeu Capo",
+      "email": "t.capo@hotelbeds.com"
     }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "hotelbeds\\hotel_api_sdk\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "hotelbeds\\hotel_api_sdk\\Tests\\": "tests/"
+    }
+  }
 }

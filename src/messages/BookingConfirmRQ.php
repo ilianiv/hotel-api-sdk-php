@@ -10,7 +10,6 @@ namespace hotelbeds\hotel_api_sdk\messages;
 
 use hotelbeds\hotel_api_sdk\helpers\Booking;
 use hotelbeds\hotel_api_sdk\types\ApiUri;
-use Laminas\Http\Request;
 
 /**
  * Class BookingConfirmRQ
@@ -26,12 +25,17 @@ class BookingConfirmRQ extends ApiRequest
      */
     public function __construct(ApiUri $baseUri, ApiUri $basePaymentUri, Booking $bookingDataRQ)
     {
-    	if($bookingDataRQ!=null && $bookingDataRQ->paymentData!=null){
-    		parent::__construct($basePaymentUri, self::BOOKING);
-    	} else {
-        	parent::__construct($baseUri, self::BOOKING);
-    	}
-        $this->request->setMethod(Request::METHOD_POST);
+        if ($bookingDataRQ != null && $bookingDataRQ->paymentData != null) {
+            parent::__construct($basePaymentUri, self::BOOKING);
+        } else {
+            parent::__construct($baseUri, self::BOOKING);
+        }
+
         $this->setDataRequest($bookingDataRQ);
+    }
+
+    protected function getMethod(): string
+    {
+        return 'POST';
     }
 }
