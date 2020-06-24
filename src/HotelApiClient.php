@@ -146,10 +146,10 @@ class HotelApiClient
     {
         $raw_request = $parse_response = false;
 
-        if (strpos($sdkMethod, 'Raw') === 0) {
+        if (substr($sdkMethod, -3) == 'Raw') {
             $sdkMethod   = substr($sdkMethod, 0, -3);
             $raw_request = true;
-        } elseif (strpos($sdkMethod, 'Parse') === 0) {
+        } elseif (substr($sdkMethod, -5) == 'Parse') {
             $sdkMethod      = substr($sdkMethod, 0, -5);
             $parse_response = true;
         }
