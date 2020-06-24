@@ -154,17 +154,17 @@ class HotelApiClient
             $parse_response = true;
         }
 
+        // Parse response mode
+        if ($parse_response) {
+            return $this->makeSdkClassRS($sdkMethod, $this->parseResponse($args[0]));
+        }
+        
         $req = $this->makeSdkClassRQ($sdkMethod, $args);
 
         // Raw request mode
         if ($raw_request) {
             return $this->buildRequest($req);
-        }
-
-        // Parse response mode
-        if ($parse_response) {
-            return $this->makeSdkClassRS($sdkMethod, $this->parseResponse($args[0]));
-        }
+        }        
 
         // Default behaviour
         $data = $this->callApi($req);
