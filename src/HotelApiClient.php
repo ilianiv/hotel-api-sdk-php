@@ -26,6 +26,7 @@ namespace hotelbeds\hotel_api_sdk;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Utils;
 use hotelbeds\hotel_api_sdk\helpers\Availability;
 use hotelbeds\hotel_api_sdk\helpers\Booking;
 use hotelbeds\hotel_api_sdk\helpers\BookingList;
@@ -232,7 +233,7 @@ class HotelApiClient
             throw new HotelSDKException($response->getReasonPhrase() . ': ' . $message, $auditData);
         }
 
-        return \GuzzleHttp\json_decode($response->getBody()->getContents(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**

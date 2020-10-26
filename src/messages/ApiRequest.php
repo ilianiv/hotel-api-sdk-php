@@ -9,9 +9,9 @@
 namespace hotelbeds\hotel_api_sdk\messages;
 
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Utils;
 use hotelbeds\hotel_api_sdk\helpers\ApiHelper;
 use hotelbeds\hotel_api_sdk\types\ApiUri;
-use function GuzzleHttp\Psr7\stream_for;
 
 /**
  * Class ApiRequest This is abstract request class define how prepare final HTTP Request
@@ -85,7 +85,7 @@ abstract class ApiRequest implements ApiCallTypes
                 case 'POST':
                     $this->request = $this->request
                         ->withHeader('Content-Type', 'application/json')
-                        ->withBody(stream_for($this->dataRQ->__toString()));
+                        ->withBody(Utils::streamFor($this->dataRQ->__toString()));
             }
         }
 
