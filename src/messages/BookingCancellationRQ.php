@@ -23,9 +23,9 @@ class BookingCancellationRQ extends ApiRequest
      */
     public function __construct(ApiUri $baseUri, $bookingId)
     {
-        $baseUri = $baseUri->withPath($baseUri->getPath() . "/" . self::BOOKING . "/$bookingId");
+        $baseUri = $baseUri->withPath($baseUri->getPath() . "/" . self::BOOKING);
 
-        parent::__construct($baseUri, self::BOOKING);
+        parent::__construct($baseUri, $bookingId);
     }
 
     protected function getMethod(): string
