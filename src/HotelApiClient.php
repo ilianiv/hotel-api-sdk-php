@@ -33,6 +33,7 @@ use hotelbeds\hotel_api_sdk\helpers\BookingList;
 use hotelbeds\hotel_api_sdk\helpers\CheckRate;
 use hotelbeds\hotel_api_sdk\messages\ApiRequest;
 use hotelbeds\hotel_api_sdk\messages\AvailabilityRS;
+use hotelbeds\hotel_api_sdk\messages\BookingCancellationRS;
 use hotelbeds\hotel_api_sdk\messages\BookingConfirmRS;
 use hotelbeds\hotel_api_sdk\messages\BookingDetailRS;
 use hotelbeds\hotel_api_sdk\messages\BookingListRS;
