@@ -23,12 +23,14 @@ class HotelSDKException extends \Exception
 
     /**
      * HotelSDKException constructor.
-     * @param string $message Exception message
+     *
+     * @param string         $message   Exception message
      * @param AuditData|null $auditData AuditData object if apply
+     * @param int            $code
      */
-    public function __construct($message, AuditData $auditData = null)
+    public function __construct($message, AuditData $auditData = null, int $code = 0)
     {
-        parent::__construct($message);
+        parent::__construct($message, $code);
         $this->auditData = $auditData;
     }
 

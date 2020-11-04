@@ -228,10 +228,10 @@ class HotelApiClient
                     $auditData     = new AuditData($errorResponse["auditData"]);
                     $message       = $errorResponse["error"]["code"] . ' ' . $errorResponse["error"]["message"];
                 } catch (\Exception $e) {
-                    throw new HotelSDKException($response->getReasonPhrase() . ': ' . $response->getBody());
+                    throw new HotelSDKException($response->getReasonPhrase() . ': ' . $response->getBody(), null, $e->getCode());
                 }
             }
-            throw new HotelSDKException($response->getReasonPhrase() . ': ' . $message, $auditData);
+            throw new HotelSDKException($response->getReasonPhrase() . ': ' . $message, $auditData, $response->getStatusCode());
         }
 
         return Utils::jsonDecode($response->getBody()->getContents(), true);
@@ -265,7 +265,7 @@ class HotelApiClient
         try {
             $response = $this->httpClient->send($this->buildRequest($request));
         } catch (\Exception $e) {
-            throw new HotelSDKException("Error accessing API: " . $e->getMessage());
+            throw new HotelSDKException("Error accessing API: " . $e->getMessage(), null, $e->getCode());
         }
 
         return $this->parseResponse($response);
