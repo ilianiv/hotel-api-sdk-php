@@ -24,6 +24,7 @@
 namespace hotelbeds\hotel_api_sdk;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Utils;
@@ -264,6 +265,8 @@ class HotelApiClient
     {
         try {
             $response = $this->httpClient->send($this->buildRequest($request));
+        } catch (RequestException $e) {
+            throw new HotelSDKException("Error accessing API: " . $e->getResponse()->getBody(), null, $e->getCode());
         } catch (\Exception $e) {
             throw new HotelSDKException("Error accessing API: " . $e->getMessage(), null, $e->getCode());
         }
